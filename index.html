@@ -1,0 +1,21 @@
+<style>
+  body {
+    height: 200vh;
+  }
+
+  #text {
+    font-size: 72px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+</style>
+
+<div id="text">Hello!</div>
+
+<script>
+  window.addEventListener('scroll', event => {
+    text.style.filter = `blur(${document.body.scrollTop / 10}px)`;
+  })
+</script>
