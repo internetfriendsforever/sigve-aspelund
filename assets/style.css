@@ -66,8 +66,18 @@ a::after {
   content: " →";
 }
 
+.clients-container {
+  overflow: hidden;
+}
+
 ul.clients {
+  width: 150%;
+  height: 100%;
+  max-height: 10em;
   font-size: 2rem;
+  columns: 3;
+  column-gap: 1rem;
+  column-fill: auto;
 }
 
 /* @media (max-aspect-ratio: 1/1) { */
@@ -135,12 +145,10 @@ ul.contact {
   column-gap: 1rem;
 }
 
-ul.clients {
+.clients-container {
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 7;
   grid-row-end: 8;
-  columns: 2;
-  column-gap: 1rem;
 }
 /* } */
