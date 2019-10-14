@@ -38,6 +38,7 @@ main {
   overflow: hidden;
   grid-template-columns: 50% 50%;
   grid-template-rows: 0fr 1fr 1fr 2fr 2fr 1fr auto;
+  max-height: 100%;
   padding: 0.4rem;
   box-sizing: border-box;
   pointer-events: none;
@@ -60,8 +61,8 @@ table {
 }
 
 h1 {
-  font-size: 8rem;
-  line-height: 1;
+  font-size: 7.5rem;
+  line-height: 0.9;
 }
 
 h2 {
@@ -82,6 +83,10 @@ a {
   color: white;
   text-decoration: none;
   pointer-events: auto;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 table {
@@ -116,7 +121,11 @@ ul.clients {
   column-fill: auto;
 }
 
-@media (max-aspect-ratio: 4/5) {
+*[data-depth] {
+  will-change: transform;
+}
+
+@media (max-aspect-ratio: 1/1) {
   body,
   html {
     font-size: 2.7vw;
@@ -186,7 +195,7 @@ ul.clients {
   }
 }
 
-@media (min-aspect-ratio: 4/5) {
+@media (min-aspect-ratio: 1/1) {
   body,
   html {
     font-size: 1.2vw;
@@ -263,6 +272,13 @@ ul.clients {
     font-size: 4rem;
     columns: 2;
     width: 200%;
-    max-height: none;
+  }
+}
+
+@media (min-aspect-ratio: 7/4) {
+  body,
+  html {
+    /* font-size: 1.2vw; */
+    font-size: 2vh;
   }
 }
