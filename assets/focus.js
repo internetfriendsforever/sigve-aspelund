@@ -17,7 +17,7 @@ function update () {
 
   elements.forEach((element, index) => {
     const depth = depths[index]
-    const focus = Math.min(Math.pow(Math.abs(position - depth) * 15, 2), 5).toFixed(1)
+    const focus = (Math.pow(Math.abs(position - depth) * 15, 2) / 10).toFixed(1)
     element.style.filter = `blur(${focus}px)`
   })
 
