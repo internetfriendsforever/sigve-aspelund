@@ -11,14 +11,51 @@ body {
   color: white;
   font-family: "Sigve Sans", sans-serif;
   font-weight: 600;
+  line-height: 1.1;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
 h2,
-h3 {
+h3,
+ul {
   font-weight: 600;
+  margin: 0;
+}
+
+h1 {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 a {
   color: white;
+  text-decoration: none;
+}
+
+table td {
+  vertical-align: top;
+}
+
+a::after {
+  content: " →";
+}
+
+.client-list {
+  font-size: 2rem;
 }
