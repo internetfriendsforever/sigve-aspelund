@@ -14,11 +14,22 @@ body {
   line-height: 1.2;
   font-size: 13px;
   -webkit-font-smoothing: antialiased;
-  padding: 0.4rem;
+  margin: 0;
+  height: 300vh;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: grid;
+  overflow: hidden;
   grid-template-columns: 50% 50%;
-  /* grid-template-rows: 0fr 1.5fr 0fr 1.5fr 0fr 1fr auto; */
   grid-template-rows: 0fr 1fr 1fr 2fr 2fr 1fr auto;
+  padding: 0.4rem;
+  box-sizing: border-box;
 }
 
 h1,
@@ -97,10 +108,6 @@ ul.clients {
 body,
 html {
   font-size: 2.7vw;
-  height: 100%;
-  margin: 0;
-  box-sizing: border-box;
-  overflow: hidden;
 }
 
 h3.clients {
