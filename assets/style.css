@@ -275,6 +275,7 @@ ul.contact {
     font-size: 4rem;
     columns: 2;
     width: 200%;
+    max-height: none;
   }
 }
 
