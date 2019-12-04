@@ -13,9 +13,7 @@ scroller.addEventListener('scroll', function () {
 
 function update () {
   const scroll = scroller.scrollTop
-  const contentHeight = spacer.offsetHeight
-  const windowHeight = window.innerHeight
-  const position = scroll / (contentHeight - windowHeight)
+  const position = scroll / (spacer.offsetHeight - window.innerHeight)
 
   elements.forEach((element, index) => {
     const depth = depths[index]
@@ -35,3 +33,33 @@ function updateHeight () {
 }
 
 updateHeight()
+
+const heading = document.querySelector('h1')
+const headingDepth = heading.getAttribute('data-depth')
+const target = (spacer.offsetHeight - window.innerHeight) * headingDepth
+
+let animating = true
+
+function animate (time) {
+  const duration = 2000
+  const progress = Math.min(time / duration, 1)
+  const bump = (Math.sin(progress * Math.PI * 5) + 1) * (1 - progress) * 0.1
+  const eased = progress * progress + bump
+
+  scroller.scrollTo(0, target * eased)
+
+  if (animating && progress <= 1) {
+    window.requestAnimationFrame(animate)
+  }
+}
+
+function stopAnimating () {
+  animating = false
+}
+
+animate(0)
+
+window.addEventListener('mousewheel', stopAnimating)
+window.addEventListener('touchstart', stopAnimating)
+window.addEventListener('keydown', stopAnimating)
+window.addEventListener('mousedown', stopAnimating)
