@@ -48,7 +48,7 @@ function animate (time) {
 
   scroller.scrollTo(0, target * eased)
 
-  if (animating && progress <= 1) {
+  if (animating && progress < 1) {
     window.requestAnimationFrame(animate)
   }
 }
@@ -59,7 +59,7 @@ function stopAnimating () {
 
 animate(0)
 
-window.addEventListener('mousewheel', stopAnimating)
-window.addEventListener('touchstart', stopAnimating)
-window.addEventListener('keydown', stopAnimating)
-window.addEventListener('mousedown', stopAnimating)
+document.addEventListener('wheel', stopAnimating)
+document.addEventListener('touchstart', stopAnimating)
+document.addEventListener('keydown', stopAnimating)
+document.addEventListener('mousedown', stopAnimating)
