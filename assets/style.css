@@ -36,7 +36,7 @@ main {
   display: grid;
   overflow: hidden;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 0fr 1fr 1fr 2fr 2fr 1fr auto;
+  grid-template-rows: 0.8fr 1fr 1fr 1fr 1fr 1fr auto;
   max-height: 100%;
   padding: 0.4rem;
   box-sizing: border-box;
@@ -67,6 +67,7 @@ h1 {
 h2,
 h3 {
   font-size: 2rem;
+  line-height: 1.1;
 }
 
 h3 {
@@ -107,7 +108,7 @@ a::after {
 
 .clients-container {
   overflow: hidden;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 ul.clients {
@@ -128,6 +129,7 @@ ul.contact {
   will-change: transform;
 }
 
+/* Single-column format */
 @media (max-aspect-ratio: 3/4) {
   body,
   html {
@@ -196,6 +198,7 @@ ul.contact {
   }
 }
 
+/* Two-column format */
 @media (min-aspect-ratio: 3/4) {
   body,
   html {
@@ -203,11 +206,13 @@ ul.contact {
   }
 
   main {
-    grid-template-rows: 0fr 1fr 0fr 2fr 2fr 1fr auto;
+    /*grid-template-rows: 0fr 1fr 1fr 1.5fr 1fr 1fr auto;*/
+    grid-template-rows: 0fr 1fr 1fr 1.5fr 1fr;
   }
 
   h2 {
     font-size: 4rem;
+    padding-right: 1em;
   }
 
   h3.clients {
@@ -262,6 +267,7 @@ ul.contact {
     grid-column-end: 2;
     grid-row-start: 6;
     grid-row-end: 7;
+    padding-bottom: 1rem;
   }
 
   .clients-container {
@@ -279,6 +285,7 @@ ul.contact {
   }
 }
 
+/* Two-column wide format */
 @media (min-aspect-ratio: 7/4) {
   body,
   html {
