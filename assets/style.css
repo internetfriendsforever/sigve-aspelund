@@ -65,8 +65,9 @@ h1 {
   line-height: 0.9;
 }
 
-h2 {
-  font-size: 3rem;
+h2,
+h3 {
+  font-size: 2rem;
 }
 
 h3 {
@@ -203,6 +204,10 @@ ul.clients {
 
   main {
     grid-template-rows: 0fr 1fr 0fr 2fr 2fr 1fr auto;
+  }
+
+  h2 {
+    font-size: 4rem;
   }
 
   h3.clients {
